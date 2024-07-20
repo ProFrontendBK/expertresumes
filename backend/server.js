@@ -48,6 +48,15 @@ const Resume = mongoose.model('Resume', resumeSchema);
 const Contact = mongoose.model('Contact', contactSchema);
 
 // Routes
+app.get('/',async (req , res) => {
+    try{
+
+        res.status(200).send("this is backend Successfully running")
+
+    }catch (err){
+        res.status(400).send(err)
+    }
+})
 app.post('/api/resume', async (req, res) => {
     try {
         console.log('Received resume data:', req.body); // Log request body

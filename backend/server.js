@@ -30,10 +30,27 @@ const resumeSchema = new mongoose.Schema({
     name: String,
     email: String,
     phone: String,
-    education: String,
-    experience: String,
+    education:[{
+        schoolName: { type: String, required: true },
+        schoolLocation: { type: String, required: true },
+        degree: { type: String, required: true },
+        fieldOfStudy: { type: String, required: true },
+        date: { type: String, required: true }, 
+      }],
+    experience: [{
+        jobTitle: { type: String, required: true },
+        city: { type: String, required: true },
+        employer: { type: String, required: true },
+        country: { type: String, required: true },
+        startDate: { type: String, required: true },
+        endDate: { type: String },
+      }],
     skills: [String],
-    projects: String,
+    projects: [{
+        title: { type: String, required: true },
+        description: { type: String, required: true },
+        liveLink: String,
+      }],
     github: String,
     linkedin:String
 });

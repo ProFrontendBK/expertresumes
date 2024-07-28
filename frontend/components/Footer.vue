@@ -1,7 +1,7 @@
 <template>
-  <div class="h-[100px] bg-[#f8fafc] border-t-[2px] border-[#fde68a] bottom-0">
+  <footer class="h-[100px] bg-[#f8fafc] border-t-[2px] border-[#fde68a] ">
     Footer Menu
-  </div>
+  </footer>
 </template>
 
 <script>

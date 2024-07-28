@@ -4,7 +4,7 @@
 			Expert Resumes
 		</div>
 		<nav class="h-[64px] grid items-center">
-			<ul class="grid grid-flow-col w-[60%] mx-auto justify-items-center">
+			<ul class="grid grid-flow-col font-semibold w-[60%] mx-auto justify-items-center">
 				<li>
 					<NuxtLink to="/">
 						Home

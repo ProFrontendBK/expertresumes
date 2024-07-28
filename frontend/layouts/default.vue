@@ -1,10 +1,13 @@
 <template>
-	<div class="flex flex-col min-h-full h-[100vh] justify-between">
-		<Header />
-		<main class="p-4 h-full bg-[#fafafa]">
-			<NuxtPage />
-		</main>
-    <Footer class="bg-[#e0f2fe]" />
+	<div class="min-h-screen grid grid-rows-[auto_1fr_auto]">
+		
+				<Header />
+				<main class="h-full bg-[#fafafa]">
+					<NuxtPage />
+				</main>
+			
+				<Footer class="bg-[#e0f2fe]" />
+			
 	</div>
 </template>
 <script setup>

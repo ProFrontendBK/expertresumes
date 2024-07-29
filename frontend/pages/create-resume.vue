@@ -103,7 +103,7 @@
 					:isFirst="index === 0"
 				/>
 			</div>
-			<div class="border-2 border-yellow-400 p-4  grid gap-4">
+			<div class="border-2 border-yellow-400 p-4 grid gap-4">
 				<div class="grid grid-flow-col items-center">
 					<h5 class="text-xl font-semibold">Skills</h5>
 				</div>
@@ -145,11 +145,13 @@
 					:isFirst="index === 0"
 				/>
 			</div>
-			<button 
-			class="p-2 w-fit justify-self-end border-[0.5px] border-yellow-500 text-center font-semibold transition duration-300 ease-in-out delay-100 transform hover:bg-yellow-500 hover:text-white"
-			type="submit">Generate ATS Resume</button>
+			<button
+				class="p-2 w-fit justify-self-end border-[0.5px] border-yellow-500 text-center font-semibold transition duration-300 ease-in-out delay-100 transform hover:bg-yellow-500 hover:text-white"
+				type="submit"
+			>
+				Generate ATS Resume
+			</button>
 		</form>
-		
 	</div>
 </template>
 <script setup>
@@ -164,10 +166,69 @@ const linkedin = ref("/linkedin");
 const email = ref("/email");
 const github = ref("/github");
 const portfolio = ref("/portfolio");
-const education = ref([]);
-const experience = ref([]);
-const skills = ref("Vue JS, Nuxt JS, Tailwind, CSS, HTML, JavaScript");
-const project = ref([]);
+const education = ref([
+	{
+		id: "edu-123",
+		schoolName: "VSN SIDDARTHA",
+		schoolLocation: "PILERU",
+		degree: "BSC COMPUTERS",
+		fieldOfStudy: "COMPUTERS",
+		startDate: "03/03/2002",
+		endDate: "02/07/2004",
+		courseWork:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+	},
+	{
+		id: "edu-456",
+		schoolName: "School 2",
+		schoolLocation: "Tirupati",
+		degree: "BSC TERS",
+		fieldOfStudy: "RS",
+		startDate: "03/03/2002",
+		endDate: "02/07/2004",
+		courseWork:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+	},
+]);
+const experience = ref([
+	{
+		id: "exp-123",
+		jobTitle: "Software Developer",
+		employer: "Mastan IT Solutions",
+		city: "HYD",
+		country: "INDIA",
+		startDate: "03/03/2002",
+		endDate: "02/07/2004",
+		jobDescription:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+	},
+	{
+		id: "exp-456",
+		jobTitle: "Frontend Developer",
+		employer: "Smething IT Solutions",
+		city: "HYD",
+		country: "INDIA",
+		startDate: "03/03/2002",
+		endDate: "02/07/2002",
+		jobDescription:'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',	 
+	},
+]);
+const skills = ref(
+	"Vue JS, Nuxt JS, Tailwind, CSS, HTML, JavaScript, Vue JS, Nuxt JS, Tailwind, CSS, HTML, JavaScript, Vue JS, Nuxt JS, Tailwind, CSS, HTML, JavaScript, Vue JS, Nuxt JS, Tailwind, CSS, HTML, JavaScript,Vue JS, Nuxt JS, Tailwind, CSS, HTML, JavaScript"
+);
+const project = ref([
+	{
+		id: "pro-123",
+		projectTitle: "Chat Bot",
+		projectDescription:
+			"Chat Bot is Useless App created for the Project Purpose",
+		projectLink: "google.com",
+	},
+	{
+		id: "pro-456",
+		projectTitle: "Pani Puri",
+		projectDescription:
+			"Pani Puri is Useless App created for the Project Purpose",
+		projectLink: "panipuri.com",
+	},
+]);
 function updateEduDetails(section) {
 	const index = education.value.findIndex((item) => item.id === section.id);
 	if (index !== -1) {
@@ -198,36 +259,44 @@ function generateDynamicId(prefix = "id") {
 function addNewSection(category) {
 	let dynamicId = generateDynamicId();
 	if (category === "education") {
-		education.value.push({
-			id: dynamicId,
-			schoolName: "VSN SIDDARTHA",
-			schoolLocation: "PILERU",
-			degree: "BSC COMPUTERS",
-			fieldOfStudy: "COMPUTERS",
-			date: "02/05/2000",
-		});
+		education.value.push(
+			{
+				id: dynamicId,
+				schoolName: "",
+				schoolLocation: "",
+				degree: "",
+				fieldOfStudy: "",
+				startDate: "",
+				endDate: "",
+			},
+		);
 	} else if (category === "experience") {
-		experience.value.push({
-			id: dynamicId,
-			jobTitle: "Software Developer",
-			employer: "Mastan IT Solutions",
-			city: "HYD",
-			country: "INDIA",
-			startDate: "03/03/2002",
-			endDate: "02/07/2004",
-		});
+		experience.value.push(
+			{
+				id: dynamicId,
+				jobTitle: "",
+				jobDescription: '',
+				employer: "",
+				city: "",
+				country: "",
+				startDate: "",
+				endDate: "",
+			},
+		);
 	} else if (category === "project") {
-		project.value.push({
-			id: dynamicId,
-			projectTitle: "Chat Bot",
-			projectDescription: "Chat Bot is Useless App created for the Project Purpose",
-			projectLink: "google.com",
-		});
+		project.value.push(
+			{
+				id: dynamicId,
+				projectTitle: "",
+				projectDescription:"",
+				projectLink: "",
+			},
+		);
 	}
 }
-addNewSection("education");
-addNewSection("experience");
-addNewSection("project");
+// addNewSection("education");
+// addNewSection("experience");
+// addNewSection("project");
 function removeEduSection(id) {
 	education.value = education.value.filter((edu) => edu.id !== id);
 }

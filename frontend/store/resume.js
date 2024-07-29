@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 export const useResumeStore = defineStore("resume", {
 	state: () => ({
 		count: 0,
-        apiEndpoint: "http://192.168.29.40:5000/api",
+        apiEndpoint: "http://localhost:4000/api",
 
 	}),
 	getters: {
@@ -14,7 +14,7 @@ export const useResumeStore = defineStore("resume", {
 			this.count++;
 		},
 		sendDetails(payload) {
-			fetch(`${this.apiEndpoint} + /resume`, {
+			fetch(`${this.apiEndpoint}/resume`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

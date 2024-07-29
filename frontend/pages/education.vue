@@ -57,13 +57,33 @@
 				/>
 			</div>
 			<div class="flex flex-col">
-				<label for="date">Date</label>
+				<label for="startDate">Start Date</label>
 				<input
 					type="text"
-					v-model="section.date"
+					v-model="section.startDate"
+					@input="emitEduDetails"
+					id="startDate"
+					class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500"
+				/>
+			</div>
+			<div class="flex flex-col">
+				<label for="endDate">End Date</label>
+				<input
+					type="text"
+					v-model="section.endDate"
+					@input="emitEduDetails"
+					id="endDate"
+					class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500"
+				/>
+			</div>
+			<div class="flex flex-col col-span-2">
+				<label for="date">Course Work</label>
+				<textarea
+					type="text"
+					v-model="section.courseWork"
 					@input="emitEduDetails"
 					id="date"
-					class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500"
+					class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500 h-[150px]"
 				/>
 			</div>
 		</div>

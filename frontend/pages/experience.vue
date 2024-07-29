@@ -76,6 +76,16 @@
 					class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500"
 				/>
 			</div>
+			<div class="flex flex-col col-span-2">
+				<label for="jobDescription">Job Description</label>
+				<textarea
+					type="text"
+					v-model="section.jobDescription"
+					@input="emitExpDetails"
+					id="jobDescription"
+					class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500 h-[150px]"
+				/>
+			</div>
 
             
 			

@@ -171,7 +171,7 @@ const github = ref("");
 const portfolio = ref("");
 const education = ref([]);
 const experience = ref([]);
-const skills = ref()
+const skills = ref("");
 const project = ref([]);
 function updateEduDetails(section) {
 	const index = education.value.findIndex((item) => item.id === section.id);

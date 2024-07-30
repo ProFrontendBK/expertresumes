@@ -30,6 +30,8 @@
 	</header>
 </template>
 <script setup>
+import { useResumeStore } from "@/store/resume.js";
+const store = useResumeStore();
 const isHeaderNestedMenuOpen = useState("isHeaderNestedMenuOpen", () =>
 	ref(false)
 );

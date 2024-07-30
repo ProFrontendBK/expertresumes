@@ -5,7 +5,7 @@
 		>
 			<div class="grid justify-items-center mx-auto px-4 text-center">
 				<h1 class="text-5xl font-bold mb-4">Build Your Perfect Resume</h1>
-				<p class="text-xl mb-8 lg:w-[50%]">
+				<p class="text-xl mb-8 md:w-[70%] lg:w-[50%]">
 					Stand out from the crowd with professionally crafted resumes. Tailored
 					to your needs, ready in minutes.
 				</p>

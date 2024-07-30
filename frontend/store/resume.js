@@ -2,9 +2,8 @@ import { defineStore } from "pinia";
 
 export const useResumeStore = defineStore("resume", {
 	state: () => ({
+		runtimeConfig: useRuntimeConfig(),
 		count: 0,
-        apiEndpoint: "http://localhost:4000/api",
-
 	}),
 	getters: {
 		doubleCount: (state) => state.count * 2,
@@ -14,7 +13,7 @@ export const useResumeStore = defineStore("resume", {
 			this.count++;
 		},
 		sendDetails(payload) {
-			fetch(`${this.apiEndpoint}/resume`, {
+			fetch(`${this.runtimeConfig.public.apiBase}/resume`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -26,8 +25,8 @@ export const useResumeStore = defineStore("resume", {
 					console.log("Success:", result);
 				});
 		},
-        getResumeById(payload) {
-            fetch("")
-        }
+		getResumeById(payload) {
+			fetch("");
+		},
 	},
 });

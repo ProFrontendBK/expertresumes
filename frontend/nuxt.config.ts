@@ -12,6 +12,14 @@ export default defineNuxtConfig({
 			],
 		},
 	},
+	runtimeConfig: {
+		// Private keys are only available on the server
+
+		// Public keys that are exposed to the client
+		public: {
+			apiBase: process.env.NUXT_PUBLIC_API_BASE,
+		},
+	},
 	modules: ["@pinia/nuxt"],
 	compatibilityDate: "2024-04-03",
 	devtools: { enabled: true },

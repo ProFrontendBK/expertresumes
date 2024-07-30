@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -16,6 +17,7 @@ const fonts = {
 const printer = new pdfMake(fonts);
 const app = express();
 const PORT = process.env.PORT || 4000;
+const mongoURI = process.env.MONGODB_URI;
 // const HOST = '192.168.29.40'
 
 // Middleware
@@ -27,9 +29,11 @@ mongoose.set("debug", true);
 
 // MongoDB Connection
 mongoose
-	.connect("mongodb://localhost:27017/expertresumes")
+	.connect(
+		mongoURI
+	)
 	.then(() => {
-		console.log("Connected to MongoDB");
+		console.log("Connected to MongoDB")
 	})
 	.catch((err) => {
 		console.error("Error connecting to MongoDB", err);

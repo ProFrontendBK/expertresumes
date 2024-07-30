@@ -2,54 +2,54 @@
 	<div>
 		<div class="flex flex-wrap justify-center gap-8 p-4">
 			<div>
-				<NuxtLink class="nav-item" to="/custom-resume">
+				<div class="nav-item" >
 					Custom Resume Creation
-				</NuxtLink>
+				</div>
 			</div>
 			<div>
-				<NuxtLink class="nav-item" to="/custom-resume">
+				<div class="nav-item" >
 					Cover Letter Writing
-				</NuxtLink>
+				</div>
 			</div>
 			<div>
-				<NuxtLink class="nav-item" to="/custom-resume">
+				<div class="nav-item" >
 					LinkedIn Profile Optimization
-				</NuxtLink>
+				</div>
 			</div>
 			<div>
-				<NuxtLink class="nav-item" to="/custom-resume">
+				<div class="nav-item" >
 					Career Coaching and Consultation
-				</NuxtLink>
+				</div>
 			</div>
 			<div>
-				<NuxtLink class="nav-item" to="/custom-resume">
+				<div class="nav-item" >
 					Interview Preparation
-				</NuxtLink>
+				</div>
 			</div>
 			<div>
-				<NuxtLink class="nav-item" to="/custom-resume">
+				<div class="nav-item" >
 					Portfolio Development
-				</NuxtLink>
+				</div>
 			</div>
 			<div>
-				<NuxtLink class="nav-item" to="/custom-resume">
+				<div class="nav-item" >
 					Job Application Assistance
-				</NuxtLink>
+				</div>
 			</div>
 			<div>
-				<NuxtLink class="nav-item" to="/custom-resume">
+				<div class="nav-item" >
 					Workshops and Webinars
-				</NuxtLink>
+				</div>
 			</div>
 			<div>
-				<NuxtLink class="nav-item" to="/custom-resume">
+				<div class="nav-item" >
 					Personal Branding Services
-				</NuxtLink>
+				</div>
 			</div>
 			<div>
-				<NuxtLink class="nav-item" to="/custom-resume">
+				<div class="nav-item" >
 					Professional Document Review
-				</NuxtLink>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -70,7 +70,7 @@ const resumeSchema = new mongoose.Schema({
 			endDate: { type: String },
 		},
 	],
-	skills: { type: "String", required: true },
+	skills: String,
 	project: [
 		{
 			id: { type: String, required: true },

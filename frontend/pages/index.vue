@@ -1,7 +1,7 @@
 <template>
 	<div class="">
 		<section
-			class="bg-gradient-to-r from-gray-900 to-yellow-500 text-white py-20"
+			class="pt-20"
 		>
 			<div class="grid justify-items-center mx-auto px-4 text-center">
 				<h1 class="text-5xl font-bold mb-4">Build Your Perfect Resume</h1>

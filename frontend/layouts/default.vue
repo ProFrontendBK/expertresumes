@@ -1,8 +1,8 @@
 <template>
-	<div class="min-h-screen grid grid-rows-[auto_1fr_auto]">
+	<div class="min-h-screen relative text-[#1D1D1F] grid grid-rows-[auto_1fr_auto]">
 		
-				<Header />
-				<main class="h-full bg-[#fafafa]">
+				<Header class="sticky  top-0" />
+				<main class="h-full bg-gradient-to-r from-blue-900 via-indigo-600 to-purple-500 text-white">
 					<NuxtPage />
 				</main>
 			

@@ -13,7 +13,7 @@ export const useResumeStore = defineStore("resume", {
 			this.count++;
 		},
 		sendDetails(payload) {
-			fetch(`${this.runtimeConfig.public.apiBase}/resume`, {
+			fetch(`${this.runtimeConfig.public.apiBase}/api/resume`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

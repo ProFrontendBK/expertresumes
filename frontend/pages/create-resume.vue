@@ -1,68 +1,81 @@
 <template>
-	<div class="flex flex-row w-full h-full">
+	<div class="flex flex-col w-full h-full py-4 md:py-10 text-[#1D1D1F]">
+		<h2 class="grid text-white text-[36px] mx-auto max-w-[800px]">Build Your Resume</h2>
 		<form
 			@submit.prevent="submitDetails"
-			class="p-4 grid gap-4 mx-auto w-[80%]"
+			class="p-4 grid gap-4 mx-auto max-w-[800px] w-full"
 		>
-			<div class="border-2 border-yellow-400 p-4 grid gap-4">
-				<h5 class="text-xl font-semibold col-span-2">Personal Details</h5>
-				<div class="flex flex-col">
-					<label for="name">Name</label>
-					<input
-						type="text"
-						v-model="name"
-						id="name"
-						class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500"
-					/>
-				</div>
-				<div class="flex flex-col">
-					<label for="phone">Mobile Number</label>
-					<input
-						type="text"
-						v-model="phone"
-						id="phone"
-						class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500"
-					/>
-				</div>
-				<div class="flex flex-col">
-					<label for="linkedin">Linkedin</label>
-					<input
-						type="text"
-						id="linkedin"
-						v-model="linkedin"
-						class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500"
-					/>
-				</div>
-				<div class="flex flex-col">
-					<label for="email">Gmail</label>
-					<input
-						type="text"
-						id="email"
-						v-model="email"
-						class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500"
-					/>
-				</div>
-				<div class="flex flex-col">
-					<label for="github">Github</label>
-					<input
-						type="text"
-						v-model="github"
-						id="github"
-						class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500"
-					/>
-				</div>
-				<div class="flex flex-col">
-					<label for="portfolio">Portfolio</label>
-					<input
-						type="text"
-						id="portfolio"
-						v-model="portfolio"
-						class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500"
-					/>
+			<div
+				class="bg-white p-5 border-[#D1D1D6] rounded-[12px] ring-1 ring-gray-900/5 grid gap-5"
+			>
+				<h5 class="text-xl font-semibold tracking-wider">BASIC DETAILS</h5>
+				<div class="grid md:grid-cols-2 gap-4">
+					<div class="flex flex-col">
+						<label class="text-[13px]" for="name">Name</label>
+						<input
+							type="text"
+							v-model="name"
+							id="name"
+							placeholder="John Doe"
+							class="p-3 focus:outline-none focus:ring-[2px] focus:ring-blue-100 rounded-[12px] border-[0.5px] border-[#D1D1D6] placeholder:text-gray-500/30"
+						/>
+					</div>
+					<div class="flex flex-col">
+						<label class="text-[13px]" for="phone">Mobile Number</label>
+						<input
+							type="text"
+							v-model="phone"
+							id="phone"
+							placeholder="+91 9876543210"
+							class="p-3 focus:outline-none focus:ring-[2px] focus:ring-blue-100 rounded-[12px] border-[0.5px] border-[#D1D1D6] placeholder:text-gray-500/30"
+						/>
+					</div>
+					<div class="flex flex-col">
+						<label class="text-[13px]" for="linkedin">Linkedin</label>
+						<input
+							type="text"
+							id="linkedin"
+							placeholder="https://www.linkedin.com/in/"
+							v-model="linkedin"
+							class="p-3 focus:outline-none focus:ring-[2px] focus:ring-blue-100 rounded-[12px] border-[0.5px] border-[#D1D1D6] placeholder:text-gray-500/30"
+						/>
+					</div>
+					<div class="flex flex-col">
+						<label class="text-[13px]" for="email">Email</label>
+						<input
+							type="text"
+							id="email"
+							v-model="email"
+							placeholder="placeholder@gmail.com"
+							class="p-3 focus:outline-none focus:ring-[2px] focus:ring-blue-100 rounded-[12px] border-[0.5px] border-[#D1D1D6] placeholder:text-gray-500/30"
+						/>
+					</div>
+					<div class="flex flex-col">
+						<label class="text-[13px]" for="github">Github</label>
+						<input
+							type="text"
+							v-model="github"
+							id="github"
+							placeholder="https://github.com/"
+							class="p-3 focus:outline-none focus:ring-[2px] focus:ring-blue-100 rounded-[12px] border-[0.5px] border-[#D1D1D6] placeholder:text-gray-500/30"
+						/>
+					</div>
+					<div class="flex flex-col">
+						<label class="text-[13px]" for="portfolio">Portfolio</label>
+						<input
+							type="text"
+							id="portfolio"
+							v-model="portfolio"
+							placeholder="www.placeholder.com"
+							class="p-3 focus:outline-none focus:ring-[2px] focus:ring-blue-100 rounded-[12px] border-[0.5px] border-[#D1D1D6] placeholder:text-gray-500/30"
+						/>
+					</div>
 				</div>
 			</div>
-			<div class="border-2 border-yellow-400 p-4 grid gap-4">
-				<h5 class="text-xl font-semibold">Education</h5>
+			<div
+				class="bg-white p-5 border-[#D1D1D6] rounded-[12px] ring-1 ring-gray-900/5 grid gap-5"
+			>
+				<h5 class="text-xl font-semibold">EDUCATION</h5>
 				<ClientOnly>
 					<Education
 						v-for="(edu, index) in education"
@@ -77,9 +90,11 @@
 					/>
 				</ClientOnly>
 			</div>
-			<div class="border-2 border-yellow-400 p-4 grid gap-4">
+			<div
+				class="bg-white p-5 border-[#D1D1D6] rounded-[12px] ring-1 ring-gray-900/5 grid gap-4"
+			>
 				<div class="grid grid-flow-col items-center">
-					<h5 class="text-xl font-semibold">Experience</h5>
+					<h5 class="text-xl font-semibold">EXPERIENCE</h5>
 					<button
 						v-if="experience.length === 0"
 						class="p-2 w-fit grid items-center justify-self-end border-yellow-500 text-center font-semibold transition duration-300 ease-in-out delay-100 transform hover:bg-yellow-500 hover:text-white"
@@ -107,23 +122,28 @@
 					/>
 				</ClientOnly>
 			</div>
-			<div class="border-2 border-yellow-400 p-4 grid gap-4">
+			<div
+				class="bg-white p-5 border-[#D1D1D6] rounded-[12px] ring-1 ring-gray-900/5 grid gap-4"
+			>
 				<div class="grid grid-flow-col items-center">
-					<h5 class="text-xl font-semibold">Skills</h5>
+					<h5 class="text-xl font-semibold">SKILLS</h5>
 				</div>
 				<div class="flex flex-col">
-					<label for="skills">Skills</label>
+					<label class="text-[13px]" for="skills">Skills</label>
 					<textarea
 						type="text"
 						id="skills"
 						v-model="skills"
-						class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500"
+						placeholder="Enter skills (e.g., JavaScript, React, HTML)"
+						class="p-3 focus:outline-none focus:ring-[2px] focus:ring-blue-100 rounded-[12px] border-[0.5px] border-[#D1D1D6] placeholder:text-gray-500/30"
 					/>
 				</div>
 			</div>
-			<div class="border-2 border-yellow-400 p-4 grid gap-4">
+			<div
+				class="bg-white p-5 border-[#D1D1D6] rounded-[12px] ring-1 ring-gray-900/5 grid gap-4"
+			>
 				<div class="grid grid-flow-col items-center">
-					<h5 class="text-xl font-semibold">Projects</h5>
+					<h5 class="text-xl font-semibold">PROJECTS</h5>
 					<button
 						v-if="project.length === 0"
 						class="p-2 w-fit grid items-center justify-self-end border-yellow-500 text-center font-semibold transition duration-300 ease-in-out delay-100 transform hover:bg-yellow-500 hover:text-white"
@@ -151,12 +171,20 @@
 					/>
 				</ClientOnly>
 			</div>
-			<button
-				class="p-2 w-fit justify-self-end border-[0.5px] border-yellow-500 text-center font-semibold transition duration-300 ease-in-out delay-100 transform hover:bg-yellow-500 hover:text-white"
-				type="submit"
-			>
-				Generate ATS Resume
-			</button>
+			<div class="grid md:grid-flow-col gap-4 mt-4">
+				<button
+					type="submit"
+					class="rounded-[12px] bg-blue-600/10 hover:bg-blue-600/30 border-blue-600 border-[1px] py-3 px-5 text-[13px] font-semibold text-gray-900 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+				>
+					Generate Basic Resume
+				</button>
+				<button
+					type="submit"
+					class="rounded-[12px] bg-blue-800 hover:bg-blue-800/90 text-white py-3 px-5 text-[13px] font-semibold shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+				>
+					Generate ATS Resume
+				</button>
+			</div>
 		</form>
 	</div>
 </template>
@@ -245,7 +273,6 @@ function removeProSection(id) {
 	project.value = project.value.filter((pro) => pro.id !== id);
 }
 function submitDetails() {
-	console.log("Calling store component function");
 	store.sendDetails({
 		name: name.value,
 		email: email.value,

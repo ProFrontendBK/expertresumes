@@ -1,29 +1,43 @@
 <template>
-	<header class="bg-[#f8fafc] shadow-xl border-b-2">
-		<div class="text-xs bg-[#fde68a] px-4 font-semibold">
-			Expert Resumes
-		</div>
-		<nav class="h-[64px] grid items-center">
-			<ul class="grid grid-flow-col font-semibold w-[60%] mx-auto justify-items-center">
+	<header
+		class=" fixed w-full bg-glass-white border border-glass-border backdrop-blur"
+	>
+		<nav class="px-[48px] py-[12px]  grid items-center max-w-[1152px] mx-auto">
+			<ul
+				class="flex flex-row justify-between items-center gap-6 tracking-wider font-semibold uppercase w-full mx-auto"
+			>
 				<li>
-					<NuxtLink to="/">
-						Home
-					</NuxtLink>
+					<img src="" class="h-[48px] w-[100px] bg-blue-50" alt="">
 				</li>
 				<li>
-					<NuxtLink to="/services">
-						Services
-					</NuxtLink>
-				</li>
-				<li>
-					<NuxtLink to="/contact">
-						Contact
-					</NuxtLink>
-				</li>
-				<li>
-					<NuxtLink to="/about">
-						About
-					</NuxtLink>
+					<ul class="flex flex-row gap-6">
+						<li @click="activeMenu = 'home'" class="transition-all delay-200 ease-in-out"
+							:class="[activeMenu === 'home' ? '' : 'text-gray-900/50 transition-all delay-200 ease-in-out']">
+							<NuxtLink to="/">
+								Home
+							</NuxtLink>
+						</li>
+						<li @click="activeMenu = 'services'" class="transition-all delay-200 ease-in-out"
+							:class="[activeMenu === 'services' ? '' : 'text-gray-900/50 transition-all delay-200 ease-in-out']">
+							<NuxtLink to="/services">
+								Services
+							</NuxtLink>
+						</li>
+						<li @click="activeMenu = 'contact'" class="transition-all delay-200 ease-in-out"
+							:class="[activeMenu === 'contact' ? '' : 'text-gray-900/50 transition-all delay-200 ease-in-out']">
+							<NuxtLink to="/contact">
+								Contact
+							</NuxtLink>
+						</li>
+						<li
+							@click="activeMenu = 'about'" class="transition-all delay-200 ease-in-out"
+							:class="[activeMenu === 'about' ? '' : 'text-gray-900/50']"
+						>
+							<NuxtLink to="/about">
+								About
+							</NuxtLink>
+						</li>
+					</ul>
 				</li>
 			</ul>
 		</nav>
@@ -32,6 +46,7 @@
 <script setup>
 import { useResumeStore } from "@/store/resume.js";
 const store = useResumeStore();
+const activeMenu = ref("");
 const isHeaderNestedMenuOpen = useState("isHeaderNestedMenuOpen", () =>
 	ref(false)
 );
@@ -47,3 +62,10 @@ onUnmounted(() => {
 	window.removeEventListener("click", handleClickOutside);
 });
 </script>
+<style scoped>
+.glassmorphic-header {
+	backdrop-filter: blur(10px);
+	background-color: rgba(255, 255, 255, 0.2); /* White with opacity */
+	border: 1px solid rgba(255, 255, 255, 0.3); /* Border with reduced opacity */
+}
+</style>

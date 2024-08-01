@@ -1,11 +1,11 @@
 <template>
 	<div>
-		<div class="grid grid-cols-2 gap-4 border-t-[2px]">
+		<div class="grid grid-cols-2 gap-4 border-gray-900/5 border-t-[1px] pt-4">
 			<div class="col-span-2 grid grid-cols-2">
-				<div class="uppercase opacity-50">{{ section.id }}</div>
-               
+				<div class="uppercase opacity-50">{{ section.jobTitle || 'job Title' }}</div>
+
 				<button
-					class="p-2 w-fit grid items-center justify-self-end border-[0.5px] border-yellow-500 text-center font-semibold transition duration-300 ease-in-out delay-100 transform hover:bg-yellow-500 hover:text-white"
+					class="w-fit grid items-center justify-self-end rounded-full border-gray-900 text-center font-semibold transition duration-300 ease-in-out delay-100  hover:bg-gray-900 hover:text-white"
 					@click="$emit('removeSection', section.id)"
 				>
 					<ClientOnly>
@@ -16,88 +16,92 @@
 					</ClientOnly>
 				</button>
 			</div>
-			<div class="flex flex-col">
-				<label for="title">Job Title</label>
+			<div class="flex flex-col col-span-2 md:col-span-1">
+				<label class="text-[13px]" for="title">Job Title</label>
 				<input
 					type="text"
 					v-model="section.jobTitle"
 					@input="emitExpDetails"
+					placeholder="Software Developer"
 					id="title"
-					class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500"
+					class="p-3 focus:outline-none focus:ring-[2px] focus:ring-blue-100 rounded-[12px] border-[0.5px] border-[#D1D1D6] placeholder:text-gray-500/30"
 				/>
 			</div>
-            <div class="flex flex-col">
-				<label for="employer">Employer</label>
+			<div class="flex flex-col col-span-2 md:col-span-1">
+				<label class="text-[13px]" for="employer">Employer</label>
 				<input
 					type="text"
 					v-model="section.employer"
 					@input="emitExpDetails"
+					placeholder="Example Pvt Ltd"
 					id="employer"
-					class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500"
+					class="p-3 focus:outline-none focus:ring-[2px] focus:ring-blue-100 rounded-[12px] border-[0.5px] border-[#D1D1D6] placeholder:text-gray-500/30"
 				/>
 			</div>
-            <div class="flex flex-col">
-				<label for="city">City</label>
+			<div class="flex flex-col col-span-2 md:col-span-1">
+				<label class="text-[13px]" for="city">City</label>
 				<input
 					type="text"
 					v-model="section.city"
 					@input="emitExpDetails"
+					placeholder="Enter your City"
 					id="city"
-					class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500"
+					class="p-3 focus:outline-none focus:ring-[2px] focus:ring-blue-100 rounded-[12px] border-[0.5px] border-[#D1D1D6] placeholder:text-gray-500/30"
 				/>
 			</div>
-            <div class="flex flex-col">
-				<label for="country">Country</label>
+			<div class="flex flex-col col-span-2 md:col-span-1">
+				<label class="text-[13px]" for="country">Country</label>
 				<input
 					type="text"
 					v-model="section.country"
 					@input="emitExpDetails"
+					placeholder="Enter your country name"
 					id="country"
-					class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500"
+					class="p-3 focus:outline-none focus:ring-[2px] focus:ring-blue-100 rounded-[12px] border-[0.5px] border-[#D1D1D6] placeholder:text-gray-500/30"
 				/>
 			</div>
-            <div class="flex flex-col">
-				<label for="startDate">Start Date</label>
+			<div class="flex flex-col">
+				<label class="text-[13px]" for="startDate">Start Date</label>
 				<input
 					type="text"
 					v-model="section.startDate"
+					placeholder="01/01/1999"
 					@input="emitExpDetails"
 					id="startDate"
-					class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500"
+					class="p-3 focus:outline-none focus:ring-[2px] focus:ring-blue-100 rounded-[12px] border-[0.5px] border-[#D1D1D6] placeholder:text-gray-500/30"
 				/>
 			</div>
-             <div class="flex flex-col">
-				<label for="endDate">End Date</label>
+			<div class="flex flex-col">
+				<label class="text-[13px]" for="endDate">End Date</label>
 				<input
 					type="text"
 					v-model="section.endDate"
+					placeholder="01/01/1999"
 					@input="emitExpDetails"
 					id="endDate"
-					class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500"
+					class="p-3 focus:outline-none focus:ring-[2px] focus:ring-blue-100 rounded-[12px] border-[0.5px] border-[#D1D1D6] placeholder:text-gray-500/30"
 				/>
 			</div>
 			<div class="flex flex-col col-span-2">
-				<label for="jobDescription">Job Description</label>
+				<label class="text-[13px]" for="jobDescription">Job Description</label>
 				<textarea
 					type="text"
 					v-model="section.jobDescription"
+					placeholder="Enter your Job Responsibilities"
 					@input="emitExpDetails"
 					id="jobDescription"
-					class="px-4 py-2 rounded-sm focus:outline-none focus:ring-[2px] focus:ring-blue-100 border-[0.5px] border-gray-500 h-[150px]"
+					class="p-3 focus:outline-none focus:ring-[2px] focus:ring-blue-100 rounded-[12px] border-[0.5px] border-[#D1D1D6] placeholder:text-gray-500/30 h-[100px]"
 				/>
 			</div>
-
-            
-			
 		</div>
 
-        <div class="grid grid-flow-col justify-between mt-4">
+		<div class="grid grid-flow-col justify-between mt-4">
 			<button
 				v-if="isLast"
-				class="p-2 border-[0.5px] border-yellow-500 text-center font-semibold transition duration-300 ease-in-out delay-100 transform hover:bg-yellow-500 hover:text-white"
+				class="py-3 px-5 text-[13px] border-[1px] rounded-[12px] text-center font-semibold transition duration-300 ease-in-out delay-100  hover:bg-gray-500/5"
 				@click="$emit('addNewSection', 'education')"
 			>
-				Add New Experience
+				<font-awesome-icon icon="fa-solid fa-plus" class="mr-2" /> Add New Experience
 			</button>
 		</div>
 	</div>

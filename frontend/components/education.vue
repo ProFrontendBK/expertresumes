@@ -4,7 +4,7 @@
 			<div class="col-span-2 grid grid-cols-2 border-gray-900/5 border-t-[1px] pt-4">
 				<span class="uppercase tracking-wider">{{ section.schoolName || 'College Name' }}</span>
 				<button
-					
+					v-if="!isFirst"
 					class="w-fit grid items-center justify-self-end rounded-full border-gray-900 text-center font-semibold transition duration-300 ease-in-out delay-100  hover:bg-gray-900 hover:text-white"
 					@click="$emit('removeSection', section.id)"
 				>

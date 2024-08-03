@@ -1,6 +1,6 @@
 <template>
-	<div class="flex flex-col w-full h-full py-4 md:py-10 text-[#1D1D1F]">
-		<h2 class="grid text-white text-[36px] mx-auto max-w-[800px]">Build Your Resume</h2>
+	<div class="flex flex-col w-full h-full text-[#1D1D1F]">
+		<h2 class="grid text-white text-2xl md:text-4xl text-center p-4 tracking-tight font-medium mx-auto uppercase max-w-[800px]">Build Your Resume</h2>
 		<form
 			@submit.prevent="submitDetails"
 			class="p-4 grid gap-4 mx-auto max-w-[800px] w-full"
@@ -97,7 +97,7 @@
 					<h5 class="text-xl font-semibold">EXPERIENCE</h5>
 					<button
 						v-if="experience.length === 0"
-						class="p-2 w-fit grid items-center justify-self-end border-yellow-500 text-center font-semibold transition duration-300 ease-in-out delay-100 transform hover:bg-yellow-500 hover:text-white"
+						class="p-2 w-fit grid items-center justify-self-end border-yellow-500 text-center font-semibold transition duration-300 ease-in-out delay-100 transform hover:bg-purple-400 rounded-2xl hover:text-white"
 						@click="addNewSection('experience')"
 					>
 						<ClientOnly>
@@ -146,7 +146,7 @@
 					<h5 class="text-xl font-semibold">PROJECTS</h5>
 					<button
 						v-if="project.length === 0"
-						class="p-2 w-fit grid items-center justify-self-end border-yellow-500 text-center font-semibold transition duration-300 ease-in-out delay-100 transform hover:bg-yellow-500 hover:text-white"
+						class="p-2 w-fit grid items-center justify-self-end text-center font-semibold transition duration-300 ease-in-out delay-100 transform hover:bg-purple-400 rounded-2xl hover:text-white"
 						@click="addNewSection('project')"
 					>
 						<ClientOnly>
@@ -174,13 +174,13 @@
 			<div class="grid md:grid-flow-col gap-4 mt-4">
 				<button
 					type="submit"
-					class="rounded-[12px] bg-blue-600/10 hover:bg-blue-600/30 border-blue-600 border-[1px] py-3 px-5 text-[13px] font-semibold text-gray-900 shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+					class="rounded-[12px] hover:bg-white/5 border-white border-[1px] py-3 px-5 text-[13px] font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
 				>
 					Generate Basic Resume
 				</button>
 				<button
 					type="submit"
-					class="rounded-[12px] bg-blue-800 hover:bg-blue-800/90 text-white py-3 px-5 text-[13px] font-semibold shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+					class="rounded-[12px] bg-white text-black bg-opacity-90 hover:bg-opacity-100 transition-color ease delay-100 py-3 px-5 text-[13px] font-semibold shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
 				>
 					Generate ATS Resume
 				</button>
@@ -191,6 +191,7 @@
 <script setup>
 import { useResumeStore } from "@/store/resume.js";
 const store = useResumeStore();
+const router = useRouter()
 const name = ref("");
 const phone = ref("");
 const linkedin = ref("");
@@ -273,6 +274,9 @@ function removeProSection(id) {
 	project.value = project.value.filter((pro) => pro.id !== id);
 }
 function submitDetails() {
+	router.push({
+		path: '/resume-preview'
+	})
 	store.sendDetails({
 		name: name.value,
 		email: email.value,

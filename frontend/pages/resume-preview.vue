@@ -1,7 +1,7 @@
 <template>
 	<div class="grid gap-4 mx-auto justify-items-center">
 		<div v-if="!store.pdf?.fileName" class="w-fit text-xl tracking-wide">
-			Resume Preview
+			Resume Preview {{ store.showLoadingAnimation }}
 		</div>
 		<div class="grid justify-items-center" v-else>
 			<img src="/img/blast-animation.gif" alt="" />
@@ -16,7 +16,7 @@
 			class="bg-white mb-4 bg-glass-blur bg-white/5 border-[2px] rounded-[12px] grid justify-items-center"
 		>
 			<div
-				v-if="showPreviewAnimation"
+				v-if="store.showLoadingAnimation"
 				class="grid grid-flow-row gap-4 items-center text-center uppercase p-4"
 			>
 				<div class="flex flex-row items-center justify-center">
@@ -51,7 +51,6 @@
 import { useResumeStore } from "@/store/resume.js";
 const store = useResumeStore();
 
-const showPreviewAnimation = ref(true);
 const pdfUrl = computed(() => store.pdfDataUrl);
 const resumeGenerationMessages = [
 	"Preparing your resume...",
@@ -92,10 +91,7 @@ function downloadFile() {
 
 onMounted(() => {
 	intervalId = setInterval(showNextMessage, 2000);
-	setTimeout(() => {
-		store.getResumeById();
-		showPreviewAnimation.value = false;
-	}, 10000);
+	store.getResumeById()
 	store.loadPdfFromLocalStorage();
 	pdfUrl.value = store.pdfDataUrl;
 });

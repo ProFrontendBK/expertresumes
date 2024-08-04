@@ -12,6 +12,9 @@ export default defineNuxtConfig({
 			],
 		},
 	},
+	gtag: {
+		id: "GTM-W2M9JGMC",
+	},
 	runtimeConfig: {
 		// Private keys are only available on the server
 
@@ -21,7 +24,7 @@ export default defineNuxtConfig({
 			// apiBase: "http://localhost:4000",
 		},
 	},
-	modules: ["@pinia/nuxt"],
+	modules: ["@pinia/nuxt", "nuxt-gtag"],
 	compatibilityDate: "2024-04-03",
 	devtools: { enabled: true },
 	css: [

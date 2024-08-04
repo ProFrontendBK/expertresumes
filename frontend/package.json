@@ -16,6 +16,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@pinia/nuxt": "^0.5.2",
     "nuxt": "^3.12.3",
+    "nuxt-gtag": "^2.1.0",
     "pinia": "^2.2.0",
     "vue": "latest"
   },

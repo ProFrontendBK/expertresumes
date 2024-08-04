@@ -13,7 +13,7 @@ export default defineNuxtConfig({
 		},
 	},
 	gtag: {
-		id: "GTM-W2M9JGMC",
+		id: "G-B68FSL4YVX",
 	},
 	runtimeConfig: {
 		// Private keys are only available on the server

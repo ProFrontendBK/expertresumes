@@ -73,9 +73,9 @@ const resumeSchema = new mongoose.Schema({
 	skills: String,
 	project: [
 		{
-			id: { type: String, required: true },
-			projectTitle: { type: String, required: true },
-			projectDescription: { type: String, required: true },
+			id: { type: String },
+			projectTitle: { type: String },
+			projectDescription: { type: String },
 			projectLink: String,
 		},
 	],
@@ -111,10 +111,6 @@ app.post("/api/resume", async (req, res) => {
 	}
 });
 
-// app.get("/api/resume/:id", async (req, res) => {
-
-// });
-
 app.get("/api/resume/:id/pdf", async (req, res) => {
 	const pdfMake = require("pdfmake/build/pdfmake");
 	const pdfFonts = require("pdfmake/build/vfs_fonts");
@@ -123,12 +119,11 @@ app.get("/api/resume/:id/pdf", async (req, res) => {
 	try {
 		const resume = await Resume.findById(req.params.id);
 		if (!resume) {
-			return res.status(404).send("Resume not found");
+			return res.status(404).send("Resume not found with ID");
 		}
 
 		const docDefinition = {
 			content: [
-				// Header
 				{ text: resume.name, style: "header" },
 				{
 					columns: [
@@ -245,16 +240,11 @@ app.get("/api/resume/:id/pdf", async (req, res) => {
 		};
 
 		const pdfDoc = pdfMake.createPdf(docDefinition);
-		pdfDoc.getBuffer((buffer) => {
-			res.writeHead(200, {
-				"Content-Type": "application/pdf",
-				"Content-Disposition": `attachment; filename=${resume.name.replace(
-					" ",
-					"_"
-				)}-resume.pdf`,
-				"Content-Length": buffer.length,
+		pdfDoc.getBase64((base64) => {
+			res.json({
+				pdfBase64: base64,
+				fileName: `${resume.name.replace(" ", "_")}-resume.pdf`,
 			});
-			res.end(buffer);
 		});
 	} catch (error) {
 		console.error(error);

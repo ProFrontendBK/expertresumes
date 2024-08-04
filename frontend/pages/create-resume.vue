@@ -273,11 +273,9 @@ function removeExpSection(id) {
 function removeProSection(id) {
 	project.value = project.value.filter((pro) => pro.id !== id);
 }
-function submitDetails() {
-	router.push({
-		path: '/resume-preview'
-	})
-	store.sendDetails({
+async function submitDetails() {
+	
+	await store.sendDetails({
 		name: name.value,
 		email: email.value,
 		phone: phone.value,
@@ -288,6 +286,9 @@ function submitDetails() {
 		skills: skills.value,
 		project: project.value,
 	});
+	router.push({
+		path: '/resume-preview'
+	})
 }
 </script>
 <style></style>

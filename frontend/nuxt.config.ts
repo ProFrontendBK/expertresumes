@@ -17,8 +17,8 @@ export default defineNuxtConfig({
 
 		// Public keys that are exposed to the client
 		public: {
-			// apiBase: process.env.NUXT_PUBLIC_API_BASE,
-			apiBase: "http://localhost:4000",
+			apiBase: process.env.NUXT_PUBLIC_API_BASE,
+			// apiBase: "http://localhost:4000",
 		},
 	},
 	modules: ["@pinia/nuxt"],

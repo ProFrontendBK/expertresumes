@@ -9,8 +9,9 @@
 			<ul
 				class="flex flex-row justify-between items-center gap-6 tracking-wider font-semibold uppercase w-full mx-auto"
 			>
-				<li>
-					<img src="" class="h-[48px] w-[100px] bg-blue-50" alt="" />
+				<li class="bg-gradient-to-r from-blue-900 via-indigo-600 to-purple-500 text-white rounded-full">
+					<!-- <img src="" class="h-[48px] w-[100px] bg-blue-50" alt="" /> -->
+					 <p class="text-4xl tracking-tighter subpixel-antialiased p-2">ER</p>
 				</li>
 				<li>
 					<ul class="flex flex-row gap-6">
